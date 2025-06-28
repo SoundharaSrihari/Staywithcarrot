@@ -356,6 +356,20 @@ button {
 .btn-remove:hover {
   color: #000000;
 }
+
+.cart-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  gap: 20px;
+}
+.cart-total {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #4a2c0a;
+}
 /*Check out button*/
 .cart-checkoutBtn {
   background: linear-gradient(45deg, #ff7e5f, #feb47b);
