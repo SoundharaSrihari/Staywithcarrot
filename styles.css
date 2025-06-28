@@ -138,9 +138,9 @@ nav ul li a:hover {
   max-width: 280px;
   padding: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* This is crucial for stacking content */
   align-items: center;
-  justify-content: space-between; 
+  justify-content: space-between; /* Distributes space and pushes button to bottom */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .product-card:hover {
@@ -163,7 +163,7 @@ nav ul li a:hover {
   margin-bottom: 15px;
   color: #7a5a2a;
   text-align: center;
-  flex-grow: 1; 
+  flex-grow: 1; /* Allows description to take up available space */
 }
 .product-card .price {
   font-weight: 700;
@@ -180,7 +180,7 @@ nav ul li a:hover {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
-  margin-top: auto; 
+  margin-top: auto; /* Pushes the button to the bottom */
 }
 .product-card button:hover {
   background: #e07b39;
@@ -355,20 +355,6 @@ button {
 }
 .btn-remove:hover {
   color: #000000;
-}
-
-.cart-total-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  gap: 20px;
-}
-.cart-total {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #4a2c0a;
 }
 /*Check out button*/
 .cart-checkoutBtn {
