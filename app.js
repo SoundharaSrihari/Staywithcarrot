@@ -249,13 +249,48 @@ function updateCartUI() {
   checkoutBtn.style.display = 'inline-block';
 }
 
+// document.getElementById('checkout-btn').addEventListener('click', () => {
+//   alert('Thank you for your purchase! This is a demo checkout.');
+//   Object.keys(cart).forEach(key => delete cart[key]);
+//   updateCartUI();
+// });
 document.getElementById('checkout-btn').addEventListener('click', () => {
-  alert('Thank you for your purchase! This is a demo checkout.');
-  Object.keys(cart).forEach(key => delete cart[key]);
-  updateCartUI();
+  const contactSection = document.getElementById('contact');
+  const msg = document.getElementById('checkout-msg');
+
+  // Show the prompt
+  msg.style.display = 'block';
+
+  // Scroll smoothly to contact form
+  contactSection.scrollIntoView({ behavior: 'smooth' });
 });
 
 window.onload = () => {
   renderProducts();
   updateCartUI();
 };
+
+// Scroll to contact section on checkout
+document.getElementById('checkout-btn').addEventListener('click', () => {
+  const contactSection = document.getElementById('contact');
+  const msg = document.getElementById('checkout-msg');
+  msg.style.display = 'block';
+  contactSection.scrollIntoView({ behavior: 'smooth' });
+});
+
+// Attach cart data to form on submit
+document.getElementById('contact-form').addEventListener('submit', function (e) {
+  const cartItemsField = document.getElementById('cart_items');
+  const cartTotalField = document.getElementById('cart_total');
+
+  const items = Object.values(cart);
+  const cartSummary = items.map(item => {
+    return `${item.name} (Qty: ${item.quantity}, Rate: $${formatPrice(item.price)})`;
+  }).join('\n');
+
+  const total = items.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  cartItemsField.value = cartSummary || 'Cart was empty';
+  cartTotalField.value = `$${formatPrice(total)}`;
+});
+
