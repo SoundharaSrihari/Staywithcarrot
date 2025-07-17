@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stay With Carrot - Natural Drinks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo"><i class="fa-solid fa-carrot" style="color: #251818;"></i> Stay with Carrot</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-info-circle"></i> About Us</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-envelope"></i> Contact Us</a></li>
+          <li><a href="#cart"><i class="fa-solid fa-cart-shopping"></i> Cart (<span id="cart-count">0</span>)</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="products container">
+      <h2>Our Signature Drinks</h2>
+      <div class="product-list" id="drink-list-1"></div>
+    </section>
+
+    <section class="cart container" id="cart">
+      <h2>Your Cart</h2>
+      <div id="cart-items">
+        <p>Your cart is empty.</p>
+      </div>
+      <div class="cart-total" id="cart-total-container" style="display:none;">
+        <strong>Total: $<span id="cart-total">0.00</span></strong>
+      </div>
+      <div>
+        <button id="checkout-btn" class="cart-checkoutBtn" style="display:none;">Save & Proceed</button>
+      </div>
+    </section>
+
+
+
+    <section class="container contact-section" id="contact">
+      <h2>Contact Us</h2>
+      <p id="checkout-msg" style="display: none; color: #e76f51; font-weight: 600; padding-bottom: 10px;">
+        Kindly fill your details to checkout.
+      </p>
+      <form id="contact-form" action="https://formspree.io/f/myzjogwa" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required placeholder="Your full name" />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="6" required placeholder="Write your message here..."></textarea>
+
+        <!-- Hidden Cart Info -->
+        <input type="hidden" name="cart_items" id="cart_items" />
+        <input type="hidden" name="cart_total" id="cart_total" />
+
+        <!-- Styled like the cart checkout button -->
+        <button type="submit" class="contact-form" style="margin-left: 0;">
+          <i class="fa-solid fa-paper-plane"></i> Checkout
+        </button>
+
+        </div>
+
+      </form>
+    </section>
+    <section class="container about-section" id="about">
+      <h2>About Us</h2>
+      <p>Welcome to Delicious Treats! We are passionate about crafting the finest natural beverages using only the
+        freshest ingredients.</p>
+      <p>Founded in 2020, Delicious Treats has quickly become a favorite spot for health-conscious individuals alike.
+      </p>
+      <p>Thank you for choosing Delicious Treats. We look forward to serving you!</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 StaywithCarrot. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
