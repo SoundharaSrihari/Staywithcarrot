@@ -1,48 +1,24 @@
 const naturalDrinks1 = [
   {
     id: 1,
-    name: "Classic Lemonade",
-    description: "Our signature refreshing lemonade, perfectly balanced with tart and sweet notes.",
+    name: "Minto Milk",
+    description: "Our signature refreshing Minto Milk, With Zero sugar and artificial flovours.",
     price: 2.99,
-    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=400&q=80"
+    image: "https://www.theculinarycompass.com/wp-content/uploads/2019/03/Baileys-Grasshopper-720-7-683x1024.jpg"
   },
   {
     id: 2,
-    name: "Mango Tango Smoothie",
-    description: "A tropical blend of fresh mango, banana, and a hint of lime.",
+    name: "The Panagam",
+    description: "A tropical blend of Panagam, With Spicy notes and Natural flovours.",
     price: 4.49,
-    image: "https://images.unsplash.com/photo-1594916301328-98e6e2f1b0a0?auto=format&fit=crop&w=400&q=80"
+    image: "https://cdn.shopify.com/s/files/1/0687/6050/2545/files/ginger-slices-jagger.webp?v=1688973432"
   },
   {
     id: 3,
-    name: "Green Detox Juice",
-    description: "Spinach, kale, apple, cucumber, and ginger for a refreshing cleanse and more & more fresh.",
+    name: "Orangy Vibes",
+    description: "Fresh, Juicy Orange with more & more vibe.",
     price: 4.99,
-    image: "https://images.unsplash.com/photo-1606774435889-122e2b34c9c2?auto=format&fit=crop&w=400&q=80"
-  }
-];
-
-const naturalDrinks2 = [
-  {
-    id: 101,
-    name: "Berry Blast Smoothie",
-    description: "A vibrant mix of strawberries, blueberries, raspberries, and a touch of honey.",
-    price: 3.99,
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80"
-  },
-  {
-    id: 102,
-    name: "Sparkling Mint Limeade",
-    description: "Zesty limeade with fresh mint, topped with sparkling water for a fizz.",
-    price: 3.49,
-    image: "https://images.unsplash.com/photo-160677435889-122e2b34c9c2?auto=format&fit=crop&w=400&q=80"
-  },
-  {
-    id: 103,
-    name: "Tropical Pineapple Punch",
-    description: "A sweet and tangy punch made with fresh pineapple, orange, and coconut water.",
-    price: 4.29,
-    image: "https://images.unsplash.com/photo-1627962489813-bc75510f2c41?auto=format&fit=crop&w=400&q=80"
+    image: "https://ohmyfacts.com/wp-content/uploads/2024/06/45-facts-about-orange-juice-1717912542.jpeg"
   }
 ];
 
@@ -161,7 +137,7 @@ function updateCartUI() {
     const minusBtn = document.createElement('button');
     minusBtn.textContent = '−';
     minusBtn.title = 'Decrease quantity';
-    minusBtn.className = 'btn-minus'; // 👈 Unique class
+    minusBtn.className = 'btn-minus'; 
     minusBtn.onclick = () => changeQuantity(item.id, -1);
 
     const qtyText = document.createElement('span');
@@ -170,7 +146,7 @@ function updateCartUI() {
     const plusBtn = document.createElement('button');
     plusBtn.textContent = '+';
     plusBtn.title = 'Increase quantity';
-    plusBtn.className = 'btn-plus'; // 👈 Unique class
+    plusBtn.className = 'btn-plus'; 
     plusBtn.onclick = () => changeQuantity(item.id, 1);
 
     qtyControls.appendChild(minusBtn);
@@ -184,7 +160,7 @@ function updateCartUI() {
     const removeBtn = document.createElement('button');
     removeBtn.textContent = '×';
     removeBtn.title = 'Remove item';
-    removeBtn.className = 'btn-remove'; // 👈 Unique class
+    removeBtn.className = 'btn-remove'; 
     removeBtn.onclick = () => removeFromCart(item.id);
 
     cartItem.appendChild(name);
@@ -195,73 +171,18 @@ function updateCartUI() {
     cartItemsContainer.appendChild(cartItem);
   });
 
-  // let total = 0;
-  // items.forEach(item => {
-  //   total += item.price * item.quantity;
-
-  //   const cartItem = document.createElement('div');
-  //   cartItem.className = 'cart-item';
-
-  //   const name = document.createElement('span');
-  //   name.className = 'cart-item-name';
-  //   name.textContent = item.name;
-
-  //   const qtyControls = document.createElement('span');
-  //   qtyControls.className = 'cart-item-qty';
-
-  //   const minusBtn = document.createElement('button');
-  //   minusBtn.textContent = '−';
-  //   minusBtn.title = 'Decrease quantity';
-  //   minusBtn.onclick = () => changeQuantity(item.id, -1);
-
-  //   const qtyText = document.createElement('span');
-  //   qtyText.textContent = item.quantity;
-
-  //   const plusBtn = document.createElement('button');
-  //   plusBtn.textContent = '+';
-  //   plusBtn.title = 'Increase quantity';
-  //   plusBtn.onclick = () => changeQuantity(item.id, 1);
-
-  //   qtyControls.appendChild(minusBtn);
-  //   qtyControls.appendChild(qtyText);
-  //   qtyControls.appendChild(plusBtn);
-
-  //   const price = document.createElement('span');
-  //   price.className = 'cart-item-price';
-  //   price.textContent = `$${formatPrice(item.price * item.quantity)}`;
-
-  //   const removeBtn = document.createElement('button');
-  //   removeBtn.textContent = '×';
-  //   removeBtn.title = 'Remove item';
-  //   removeBtn.onclick = () => removeFromCart(item.id);
-
-  //   cartItem.appendChild(name);
-  //   cartItem.appendChild(qtyControls);
-  //   cartItem.appendChild(price);
-  //   cartItem.appendChild(removeBtn);
-
-  //   cartItemsContainer.appendChild(cartItem);
-  // });
-
   cartCount.textContent = items.reduce((acc, item) => acc + item.quantity, 0);
   cartTotal.textContent = formatPrice(total);
   cartTotalContainer.style.display = 'block';
   checkoutBtn.style.display = 'inline-block';
 }
 
-// document.getElementById('checkout-btn').addEventListener('click', () => {
-//   alert('Thank you for your purchase! This is a demo checkout.');
-//   Object.keys(cart).forEach(key => delete cart[key]);
-//   updateCartUI();
-// });
 document.getElementById('checkout-btn').addEventListener('click', () => {
   const contactSection = document.getElementById('contact');
   const msg = document.getElementById('checkout-msg');
 
-  // Show the prompt
   msg.style.display = 'block';
 
-  // Scroll smoothly to contact form
   contactSection.scrollIntoView({ behavior: 'smooth' });
 });
 
